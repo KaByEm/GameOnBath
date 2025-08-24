@@ -1,73 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sportify – Book Your Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">Sportify</h1>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#booking">Book Now</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero">
-      <h2>Book Your Favorite Sports in Seconds</h2>
-      <p>Quick. Easy. Reliable. Anytime, anywhere.</p>
-      <a href="#booking" class="btn">Get Started</a>
-    </div>
-  </header>
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dimension by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <h2>Why Choose Sportify?</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>⚽ Multiple Sports</h3>
-        <p>Book football, basketball, tennis, cricket, and more.</p>
-      </div>
-      <div class="feature-card">
-        <h3>📅 Flexible Scheduling</h3>
-        <p>Pick a time that works best for you and your team.</p>
-      </div>
-      <div class="feature-card">
-        <h3>💳 Easy Payments</h3>
-        <p>Secure and fast online payments in a few clicks.</p>
-      </div>
-    </div>
-  </section>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-  <!-- Booking Form -->
-  <section id="booking" class="booking">
-    <h2>Book a Slot</h2>
-    <form id="bookingForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <select required>
-        <option value="">Select Sport</option>
-        <option value="football">Football</option>
-        <option value="basketball">Basketball</option>
-        <option value="tennis">Tennis</option>
-        <option value="cricket">Cricket</option>
-      </select>
-      <input type="date" required />
-      <button type="submit" class="btn">Book Now</button>
-    </form>
-    <p id="formMessage"></p>
-  </section>
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>GameOnBath</h1>
+								<p>Turn Free Time into Game Time. Instantly find matches, connect with players, and book sports. Only at the University of Bath.</p>
+								<p>Only at the University of Bath.</p>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <p>📧 info@sportify.com | 📞 +1 234 567 890</p>
-    <p>&copy; 2025 Sportify. All rights reserved.</p>
-  </footer>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#contact">Contact</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
 
-  <script src="script.js"></script>
-</body>
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+                                    <form id="contact-form">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+            <script>
+                emailjs.init("iok15FAoSlFOItKyz");
+            </script>
+
+            <script>
+                document.getElementById("contact-form").addEventListener("submit", function(e) {
+                    e.preventDefault(); // prevent default form submission
+
+                    emailjs.sendForm("service_g1za2ad", "template_8hfa9q6", this)
+                    .then(() => {
+                        alert("✅ Message sent successfully!");
+                        this.reset(); // reset form fields
+                    }, (err) => {
+                        alert("❌ Failed to send. Please try again.");
+                        console.error(err);
+                    });
+                });
+            </script>
+
+	</body>
 </html>
