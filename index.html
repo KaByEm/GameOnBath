@@ -41,30 +41,14 @@
 					<div id="main">
 
 						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-                                    <form id="contact-form">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-							</article>
-
+						<article id="contact">
+						    <h2 class="major">Contact</h2>
+						    <p>
+						        <a href="mailto:contact@GameOnBath.com">
+						            Send me an email
+						        </a>
+						    </p>
+						</article>
 					</div>
 
 				<!-- Footer -->
@@ -82,26 +66,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-            <script>
-                emailjs.init("iok15FAoSlFOItKyz");
-            </script>
-
-            <script>
-                document.getElementById("contact-form").addEventListener("submit", function(e) {
-                    e.preventDefault(); // prevent default form submission
-
-                    emailjs.sendForm("service_g1za2ad", "template_8hfa9q6", this)
-                    .then(() => {
-                        alert("✅ Message sent successfully!");
-                        this.reset(); // reset form fields
-                    }, (err) => {
-                        alert("❌ Failed to send. Please try again.");
-                        console.error(err);
-                    });
-                });
-            </script>
-
 	</body>
 </html>
